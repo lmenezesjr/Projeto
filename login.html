@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="imagens/logo2.png" type="image/x-icon">
+</head>
+<body>
+  <div class="div_logo">
+    <a href="home_padrao.html">
+      <div class="div_logo">
+      <div class="head"></div>
+      <div class="body_mid"></div>
+      <div class="body_left_up2"></div>
+      <div class="body_left"></div>
+      <div class="body_mid2"></div>
+      <div class="body_right_up2"></div>
+      <div class="body_right"></div>
+      <div class="body_left_aux"></div>
+      <div class="body_right_aux"></div>
+    </a>
+  </div>
+    <div class="perfil">
+      <a href="login.html">
+        <div class="perfil_css"></div>
+        <div class="perfil_css_wht"></div>
+        <div class="perfil_css_green1"></div>
+        <div class="perfil_css_green2"></div>
+      </a>
+    </div>
+</div>
+<div>
+  <p class="title">SP Medical Group</p>
+</div>
+
+<div class="pos1">
+  <div class="div_login_title">
+    <p>LOGIN</p>
+  </div>
+  <div class="div_login_text">
+    <input class="login_input" type="text" placeholder="E-mail ou CPF">
+    <select name="Tipo" id="tipo_input" onchange="updateHref(this)">
+      <option value="select" disabled selected>Tipo</option>
+      <option value="Secretária(o)" id="tipo" class="quadro">Secretária(o)</option>
+      <option value="Paciente" id="tipo" class="quadro">Paciente</option>
+      <option value="Médica(o)" id="tipo" class="quadro">Médica(o)</option>
+    </select>
+    <input class="login_password" type="password" placeholder="Senha">
+    <a href="" id="entrar_link"><button class="entrar" id="entrar">Entrar</button></a>
+    <div>
+      <a href="home_padrao.html" class="red_circle" id="red_circle"></a>
+    </div>
+    <div class="yellow_circle"></div>
+    <div class="green_circle"></div>
+    <a href="cadastro.html" class="cadastro_redir">Cadastre-se</a>
+    <a href="esq_senha.html" class="esq_senha_redir">Esqueceu a senha?</a>
+  </div>
+</div>
+
+<script>
+  function updateHref(selectElement) {
+    var tipoInput = selectElement.value;
+    var entrarLink = document.getElementById('entrar_link');
+    
+    switch (tipoInput) {
+      case 'Secretária(o)':
+        entrarLink.href = 'home_sec.html';
+        break;
+      case 'Paciente':
+        entrarLink.href = 'home_pac.html';
+        break;
+      case 'Médica(o)':
+        entrarLink.href = 'home_med.html';
+        break;
+      default:
+        entrarLink.href = '';
+        break;
+    }
+  }
+</script>
+
+    
+</body>
+</html>

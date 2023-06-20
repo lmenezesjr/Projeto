@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/logo2.png" type="image/x-icon">
+</head>
+<body>
+    <div class="div_logo">
+        <a href="home_med.html">
+          <div class="div_logo">
+          <div class="head"></div>
+          <div class="body_mid"></div>
+          <div class="body_left_up2"></div>
+          <div class="body_left"></div>
+          <div class="body_mid2"></div>
+          <div class="body_right_up2"></div>
+          <div class="body_right"></div>
+          <div class="body_left_aux"></div>
+          <div class="body_right_aux"></div>
+        </a>
+      </div>
+        <div class="perfil">
+          <a href="perfil_med.html">
+            <div class="perfil_css"></div>
+            <div class="perfil_css_wht"></div>
+            <div class="perfil_css_green1"></div>
+            <div class="perfil_css_green2"></div>
+          </a>
+        </div>
+      <div>
+        <p class="title">SP Medical Group</p>
+      </div>
+      <div class="redir">
+        <nav>
+        <a href="exames_med.html"><button class="exames2" id="exames2">Exames exigidos</button></a>
+        <a href="consultas_med.html"><button class="consultas2" id="consultas2">Suas consultas</button></a>
+        <a href="profissionais.html"><button class="profissionais2" id="profissionais2">Profissionais</button></a>
+    </nav>
+    <h1>Perfil</h1>
+    <div class="perfil_dados">
+        <div><input id="nome" class="quadro" type="text" placeholder="Nome" readonly></div>
+        <div><input class="quadro" id="tipo" type="text" placeholder="Médica(o)" readonly></div>
+        <div>
+          <select name="convenio" id="convenio" class="quadro" readonly>
+            <option value="select" disabled selected>Convênio</option>
+            <option value="Unimed">Unimed</option>
+            <option value="intermedica">Grupo NotreDame Intermédica</option>
+            <option value="amil">Amil</option>
+            <option value="sulamerica">SulAmérica</option>
+            <option value="bradescosaude">Bradesco Saúde</option>
+            <option value="allianz">Allianz</option>
+          </select>
+        </div>
+        <div>
+          <input id="sexo" class="quadro" list="sexo_options" name="sexo" placeholder="Sexo biológico" type="text" oninput="validateInput(this)" readonly>
+          <datalist id="sexo_options">
+            <option value="Feminino"></option>
+            <option value="Masculino"></option>
+            <option value="Outros"></option>
+          </datalist>
+        </div>
+        <div><input id="endereco" class="quadro" type="text" placeholder="Endereço" readonly></div>
+        <div><input id="numero" class="quadro" type="number" placeholder="Número" readonly></div>
+        <div><input id="bairro" class="quadro" type="text" placeholder="Bairro" readonly></div>
+        <div><input id="cidade" class="quadro" type="text" placeholder="Cidade" readonly></div>
+        <div><input id="estado" class="quadro" type="text" list="estados_options" name="estado" placeholder="Estado" readonly>
+          <datalist id="estados_options">
+            <option value="Acre">AC</option>
+            <option value="Alagoas">AL</option>
+            <option value="Amapá">AP</option>
+            <option value="Amazonas">AM</option>
+            <option value="Bahia">BA</option>
+            <option value="Ceará">CE</option>
+            <option value="DIstrito Federal">DF</option>
+            <option value="Espírito Santo">ES</option>
+            <option value="Goiás">GO</option>
+            <option value="Maranhão">MA</option>
+            <option value="Mato Grosso">MT</option>
+            <option value="Mato Grosso do Sul">MS</option>
+            <option value="Minas Gerais">MG</option>
+            <option value="Pará">PA</option>
+            <option value="Paraíba">PB</option>
+            <option value="Paraná">PR</option>
+            <option value="Pernambuco">PE</option>
+            <option value="Piauí">PI</option>
+            <option value="Rio de Janeiro">RJ</option>
+            <option value="Rio Grande do Norte">RN</option>
+            <option value="Rio Grande do Sul">RS</option>
+            <option value="Rondônia">RO</option>
+            <option value="Roraima">RR</option>
+            <option value="Santa Catarina">SC</option>
+            <option value="São Paulo">SP</option>
+            <option value="Sergipe">SE</option>
+            <option value="Tocantins">TO</option>
+          </datalist>
+        </div>
+        <div><input id="nasci" class="quadro" type="date" placeholder="Data de nascimento" readonly></div>
+        <div><input id="cel" class="quadro" type="number" placeholder="Telefone celular" readonly></div>
+        <div><form action="senha-esquecida.php" method="post"><input id="email2" class="quadro" type="email" placeholder="E-mail" required readonly></form></div>
+        <div><form action="senha-esquecida.php" method="post"><input id="conf" class="quadro" type="email" placeholder="Confirme seu e-mail" readonly></form></div>
+        <div><input id="senha" class="quadro" type="password" placeholder="Senha" readonly><img src="imagens/hide.png" id="revealButton" onclick="togglePasswordVisibility()"></div>
+        <div><input id="conf_s" class="quadro" type="password" placeholder="Confirme sua senha" readonly><img src="imagens/hide.png" id="revealButton2"></div>
+        <div><input id="alergias" class="quadro" type="text" placeholder="Alergias" readonly></div>
+        <div><input id="doencas" class="quadro" type="text" placeholder="Doenças" readonly></div>
+        <div id="diploma-crm" style="display: none;">
+          <div id="dip" class="quadro">
+            <input id="fileInput" class="file-input" type="file" readonly>
+            <label for="fileInput" class="file-input-label">Arquivo escolhido</label>
+            <span id="fileName" class="file-input-name">
+              <input id="dip2" class="quadro2" type="text" placeholder="Diploma médico" readonly>
+            </span>
+            <div><input id="crm" class="quadro" placeholder="CRM" type="text" readonly></div>
+          </div>
+        </div>
+        <div>
+          <input oninput="validateInput(this)" id="etnia" class="quadro" name="etnia" list="etnia_options" placeholder="Etnia" pattern="[A-Za-z]+" name="etnia" onchange="checkEtnia(this)" readonly>
+          <datalist id="etnia_options">
+            <option value="Preto">Preto(a)</option>
+            <option value="Pardo">Pardo(a)</option>
+            <option value="Indígena">Indígena</option>
+            <option value="Amarelo">Amarela(o)</option>
+            <option value="Branco">Branco(a)</option>
+            <option value="Outros">Outros</option>
+          </datalist>
+        </div>
+        <div id="outros-etnia" style="display: none;"></div>
+        <div><button class="editar" id="editar" onclick="enableInputs()">Editar</button></div>
+        <div id="saveButtonContainer" style="display: none;">
+            <button class="salvar" id="salvar" onclick="disableInputs()">Salvar</button>
+          </div>
+          <div><a href="login.html"><button class="sair" id="sair">Sair</button></a></div>
+<div class="div_aux2"></div>
+      
+      <script>
+        function enableInputs() {
+    var inputs = document.querySelectorAll('.quadro');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].removeAttribute('readonly');
+    }
+
+    document.getElementById('saveButtonContainer').style.display = 'block';
+  }
+
+  function disableInputs() {
+    var inputs = document.querySelectorAll('.quadro');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].setAttribute('readonly', 'readonly');
+    }
+
+    document.getElementById('saveButtonContainer').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
