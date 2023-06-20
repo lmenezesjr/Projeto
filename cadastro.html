@@ -1,117 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="imagens/logo2.png" type="image/x-icon">
-</head>
-<div class="div_all">
-  <body>
-    <div class="div_logo">
-      <a href="home_padrao.html">
-        <div class="div_logo">
-        <div class="head"></div>
-        <div class="body_mid"></div>
-        <div class="body_left_up2"></div>
-        <div class="body_left"></div>
-        <div class="body_mid2"></div>
-        <div class="body_right_up2"></div>
-        <div class="body_right"></div>
-        <div class="body_left_aux"></div>
-        <div class="body_right_aux"></div>
-      </a>
-    </div>
-      <div class="perfil">
-        <a href="login.html">
-          <div class="perfil_css"></div>
-          <div class="perfil_css_wht"></div>
-          <div class="perfil_css_green1"></div>
-          <div class="perfil_css_green2"></div>
-        </a>
-      </div>
-    <div><p class="title">SP Medical Group</p></div>
-      <div class="div_cad_title"><p class="p_cad_title">CADASTRO</div>
-      <div class="div_cad_text">
-        <div><input id="nome" class="quadro" type="text" placeholder="Nome"></div>
-        <div><select name="Tipo" class="quadro" id="tipo" onchange="checkTipo(this)"><option value="select" disabled selected>Tipo</option><option value="Secretária(o)" id="tipo" class="quadro">Secretária(o)</option><option value="Paciente" id="tipo" class="quadro">Paciente</option><option value="Médica(o)" id="tipo" class="quadro">Médica(o)</option></select></div>
-        <div><select name="convenio" id="convenio" class="quadro"><option value="select" disabled selected>Convênio</option><option value="Unimed">Unimed</option><option value="intermedica">Grupo NotreDame Intermédica</option><option value="amil">Amil</option><option value="sulamerica">SulAmérica</option><option value="bradescosaude">Bradesco Saúde</option><option value="allianz">Allianz</option></select></div>
-        <div><input id="sexo" class="quadro" list="sexo_options" name="sexo" placeholder="Sexo biológico" type="text" oninput="validateInput(this)"><datalist id="sexo_options"><option value="Feminino"></option><option value="Masculino"></option><option value="Outros"></option></datalist></div>
-        <div><input id="endereco" class="quadro" type="text" placeholder="Endereço"></div>
-        <div><input id="numero" class="quadro" type="number" placeholder="Número"></div>
-        <div><input id="bairro" class="quadro" type="text" placeholder="Bairro"></div>
-        <div><input id="cidade" class="quadro" type="text" placeholder="Cidade"></div>
-        <div><input id="estado" class="quadro" type="text" list="estados_options" name="estado" placeholder="Estado"><datalist id="estados_options"><option value="Acre">AC</option><option value="Alagoas">AL</option><option value="Amapá">AP</option><option value="Amazonas">AM</option><option value="Bahia">BA</option><option value="Ceará">CE</option><option value="DIstrito Federal">DF</option><option value="Espírito Santo">ES</option><option value="Goiás">GO</option><option value="Maranhão">MA</option><option value="Mato Grosso">MT</option><option value="Mato Grosso do Sul">MS</option><option value="Minas Gerais">MG</option><option value="Pará">PA</option><option value="Paraíba">PB</option><option value="Paraná">PR</option><option value="Pernambuco">PE</option><option value="Piauí">PI</option><option value="Rio de Janeiro">RJ</option><option value="Rio Grande do Norte">RN</option><option value="Rio Grande do Sul">RS</option><option value="Rondônia">RO</option><option value="Roraima">RR</option><option value="Santa Catarina">SC</option><option value="São Paulo">SP</option><option value="Sergipe">SE</option><option value="Tocantins">TO</option></datalist></div>
-        <div><input id="nasci" class="quadro" type="date" placeholder="Data de nascimento"></div>
-        <div><input id="cel" class="quadro" type="number" placeholder="Telefone celular"></div>
-        <div><form action="senha-esquecida.php" method="post"><input id="email" class="quadro" type="email" placeholder="E-mail" required></form></div>
-        <div><form action="senha-esquecida.php" method="post"><input id="conf" class="quadro" type="email" placeholder="Confirme seu e-mail"></form></div>
-        <div><input id="senha" class="quadro" type="password" placeholder="Senha"></div>
-        <div><input id="conf_s" class="quadro" type="password" placeholder="Confirme sua senha"></div>
-        <div><input id="alergias" class="quadro" type="text" placeholder="Alergias"></div>
-        <div><input id="doencas" class="quadro" type="text" placeholder="Doenças"></div>
-        <div id="diploma-crm" style="display: none;"><div id="dip" class="quadro"><input id="fileInput" class="file-input" type="file"><label for="fileInput" class="file-input-label">Escolha o arquivo</label><span id="fileName" class="file-input-name"><input id="dip2" class="quadro2" type="text" placeholder="Diploma médico" readonly></span><div><input id="crm" class="quadro" placeholder="CRM" type="text"></div></div></div>
-        <div><input oninput="validateInput(this)" id="etnia" class="quadro" name="etnia" list="etnia_options" placeholder="Etnia" pattern="[A-Za-z]+" name="etnia" onchange="checkEtnia(this)"><datalist id="etnia_options"><option value="Preto">Preto(a)</option><option value="Pardo">Pardo(a)</option><option value="Indígena">Indígena</option><option value="Amarelo">Amarela(o)</option><option value="Branco">Branco(a)</option><option value="Outros">Outros</option></datalist></div>
-        <div id="outros-etnia" style="display: none;"><input id="outros-etnia-input" class="etnia_outros" type="text" pattern="[A-Za-z]+" placeholder="Outros" oninput="validateInput(this)"></div>
-        <button class="cadastre" id="cadastre">Cadastrar</button>
-        <div><a href="home_padrao.html" class="red_circle" id="red_circle"></a></div>
-        <div class="yellow_circle"></div>
-        <div class="green_circle"></div>
-      </div>
-</div>
-<div class="div_aux"></div>
-<script>
-  function checkTipo(select) {
-    const alergiasInput = document.getElementById("alergias");
-    const doencasInput = document.getElementById("doencas");
-    const diplomaCrmContainer = document.getElementById("diploma-crm");
-
-    if (select.value === "Médica(o)") {
-      alergiasInput.style.display = "none";
-      doencasInput.style.display = "none";
-      diplomaCrmContainer.style.display = "block";
-    } else {
-      alergiasInput.style.display = "block";
-      doencasInput.style.display = "block";
-      diplomaCrmContainer.style.display = "none";
-    }
-  }
-  
-  function validateInput(input) {
-    input.setCustomValidity("");
-    if (!input.checkValidity()) {
-      input.setCustomValidity("Por favor, preencha este campo corretamente.");
-    }
-  }
-
-  function checkEtnia(select) {
-    const outrosEtniaInput = document.getElementById("outros-etnia");
-
-    if (select.value === "Outros") {
-      outrosEtniaInput.style.display = "block";
-    } else {
-      outrosEtniaInput.style.display = "none";
-    }
-  }
-
-  function validateForm() {
-    const requiredFields = document.querySelectorAll("input[required], select[required]");
-    let emptyFields = [];
-
-    requiredFields.forEach(function (field) {
-      if (!field.value) {
-        emptyFields.push(field);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="logo2" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body{
+        background-image: url("tentativa22350.jpg");
       }
-    });
+        </style>
+</head>
 
-    if (emptyFields.length > 0) {
-      emptyFields.forEach(function (field) {
-        field.setCustomValidity("Por favor, preencha este campo.");
-      });
-      alert("Por favor, preencha todos os campos.");
-    }
-  }
-</script>
+<body>
+  <div class="div_logo">
+    <a href="home_padrao.html">
+      <div class="div_logo">
+      <div class="head"></div>
+      <div class="body_mid"></div>
+      <div class="body_left_up2"></div>
+      <div class="body_left"></div>
+      <div class="body_mid2"></div>
+      <div class="body_right_up2"></div>
+      <div class="body_right"></div>
+      <div class="body_left_aux"></div>
+      <div class="body_right_aux"></div>
+    </a>
+  </div>
+  <div class="perfil">
+    <a href="login.html">
+      <div class="perfil_css"></div>
+      <div class="perfil_css_wht"></div>
+      <div class="perfil_css_green1"></div>
+      <div class="perfil_css_green2"></div>
+    </a>
+  </div>
+<div>
+  <p class="title">SP Medical Group</p>
+</div>
+    <div class="redir3">
+      <nav>
+      <a href="login.html"><button class="exames" id="exames">Seus exames</button></a>
+      <a href="login.html"><button class="agend" id="agend">Agendamento</button></a>
+      <a href="login.html"><button class="consultas" id="consultas">Suas consultas</button></a>
+      <a href="profissionais_padrao.html"><button class="profissionais" id="profissionais">Profissionais</button></a>
+  </nav>
+  <div>
+    <div><input id="nome" class="quadro" type="text" placeholder="Nome"></div>
+    <div><select name="Tipo" class="quadro" id="tipo" onchange="checkTipo(this)"><option value="select" disabled selected>Tipo</option><option value="Secretária(o)" id="tipo" class="quadro">Secretária(o)</option><option value="Paciente" id="tipo" class="quadro">Paciente</option><option value="Médica(o)" id="tipo" class="quadro">Médica(o)</option></select></div>
+    <div><select name="convenio" id="convenio" class="quadro"><option value="select" disabled selected>Convênio</option><option value="Unimed">Unimed</option><option value="intermedica">Grupo NotreDame Intermédica</option><option value="amil">Amil</option><option value="sulamerica">SulAmérica</option><option value="bradescosaude">Bradesco Saúde</option><option value="allianz">Allianz</option></select></div>
+    <div><input id="sexo" class="quadro" list="sexo_options" name="sexo" placeholder="Sexo biológico" type="text" oninput="validateInput(this)"><datalist id="sexo_options"><option value="Feminino"></option><option value="Masculino"></option><option value="Outros"></option></datalist></div>
+    <div><input id="endereco" class="quadro" type="text" placeholder="Endereço"></div>
+    <div><input id="numero" class="quadro" type="number" placeholder="Número"></div>
+    <div><input id="bairro" class="quadro" type="text" placeholder="Bairro"></div>
+    <div><input id="cidade" class="quadro" type="text" placeholder="Cidade"></div>
+    <div><input id="estado" class="quadro" type="text" list="estados_options" name="estado" placeholder="Estado"><datalist id="estados_options"><option value="Acre">AC</option><option value="Alagoas">AL</option><option value="Amapá">AP</option><option value="Amazonas">AM</option><option value="Bahia">BA</option><option value="Ceará">CE</option><option value="DIstrito Federal">DF</option><option value="Espírito Santo">ES</option><option value="Goiás">GO</option><option value="Maranhão">MA</option><option value="Mato Grosso">MT</option><option value="Mato Grosso do Sul">MS</option><option value="Minas Gerais">MG</option><option value="Pará">PA</option><option value="Paraíba">PB</option><option value="Paraná">PR</option><option value="Pernambuco">PE</option><option value="Piauí">PI</option><option value="Rio de Janeiro">RJ</option><option value="Rio Grande do Norte">RN</option><option value="Rio Grande do Sul">RS</option><option value="Rondônia">RO</option><option value="Roraima">RR</option><option value="Santa Catarina">SC</option><option value="São Paulo">SP</option><option value="Sergipe">SE</option><option value="Tocantins">TO</option></datalist></div>
+    <div><input id="nasci" class="quadro" type="date" placeholder="Data de nascimento"></div>
+    <div><input id="cel" class="quadro" type="number" placeholder="Telefone celular"></div>
+    <div><form action="senha-esquecida.php" method="post"><input id="email" class="quadro" type="email" placeholder="E-mail" required></form></div>
+    <div><form action="senha-esquecida.php" method="post"><input id="conf" class="quadro" type="email" placeholder="Confirme seu e-mail"></form></div>
+    <div><input id="senha" class="quadro" type="password" placeholder="Senha"></div>
+    <div><input id="conf_s" class="quadro" type="password" placeholder="Confirme sua senha"></div>
+    <div><input id="alergias" class="quadro" type="text" placeholder="Alergias"></div>
+    <div><input id="doencas" class="quadro" type="text" placeholder="Doenças"></div>
+    <div id="diploma-crm" style="display: none;"><div id="dip" class="quadro"><input id="fileInput" class="file-input" type="file"><label for="fileInput" class="file-input-label">Escolha o arquivo</label><span id="fileName" class="file-input-name"><input id="dip2" class="quadro2" type="text" placeholder="Diploma médico" readonly></span><div><input id="crm" class="quadro" placeholder="CRM" type="text"></div></div></div>
+    <div><input oninput="validateInput(this)" id="etnia" class="quadro" name="etnia" list="etnia_options" placeholder="Etnia" pattern="[A-Za-z]+" name="etnia" onchange="checkEtnia(this)"><datalist id="etnia_options"><option value="Preto">Preto(a)</option><option value="Pardo">Pardo(a)</option><option value="Indígena">Indígena</option><option value="Amarelo">Amarela(o)</option><option value="Branco">Branco(a)</option><option value="Outros">Outros</option></datalist></div>
+    <div id="outros-etnia" style="display: none;"><input id="outros-etnia-input" class="etnia_outros" type="text" pattern="[A-Za-z]+" placeholder="Outros" oninput="validateInput(this)"></div>
+    <h1 class="h_1"><strong>CADASTRO</strong></h1>
+    <div class="div_aux3">rthrth</div>
+    <button class="cadastre" id="cadastre">Cadastrar</button>
+  </div>
+    <script>
+      function checkTipo(select) {
+        const alergiasInput = document.getElementById("alergias");
+        const doencasInput = document.getElementById("doencas");
+        const diplomaCrmContainer = document.getElementById("diploma-crm");
+    
+        if (select.value === "Médica(o)") {
+          alergiasInput.style.display = "none";
+          doencasInput.style.display = "none";
+          diplomaCrmContainer.style.display = "block";
+        } else {
+          alergiasInput.style.display = "block";
+          doencasInput.style.display = "block";
+          diplomaCrmContainer.style.display = "none";
+        }
+      }
+      
+      function validateInput(input) {
+        input.setCustomValidity("");
+        if (!input.checkValidity()) {
+          input.setCustomValidity("Por favor, preencha este campo corretamente.");
+        }
+      }
+    
+      function checkEtnia(select) {
+        const outrosEtniaInput = document.getElementById("outros-etnia");
+    
+        if (select.value === "Outros") {
+          outrosEtniaInput.style.display = "block";
+        } else {
+          outrosEtniaInput.style.display = "none";
+        }
+      }
+    
+      function validateForm() {
+        const requiredFields = document.querySelectorAll("input[required], select[required]");
+        let emptyFields = [];
+    
+        requiredFields.forEach(function (field) {
+          if (!field.value) {
+            emptyFields.push(field);
+          }
+        });
+    
+        if (emptyFields.length > 0) {
+          emptyFields.forEach(function (field) {
+            field.setCustomValidity("Por favor, preencha este campo.");
+          });
+          alert("Por favor, preencha todos os campos.");
+        }
+      }
+    </script>
 </body>
 </html>
