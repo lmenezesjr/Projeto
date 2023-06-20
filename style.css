@@ -23,6 +23,13 @@
       top:800px;
       height: 800px;
     }
+     .div_aux3{
+      position: absolute;
+      top:750px;
+      height: 60px;
+      width: 100%;
+      color: #fff;
+    }
       .body_left{
       position: absolute;
       background-color: #fff;
@@ -182,6 +189,14 @@
       .redir2{
         position: relative;
         background-color: #E6E6E6;
+        top: -84px;
+        left: -30px;
+        height: 50px;
+        width: 2600px;
+      }
+      .redir3{
+        position: relative;
+        background-color: #689D64;
         top: -84px;
         left: -30px;
         height: 50px;
@@ -988,6 +1003,7 @@
       }
       /* CADASTRO */
       .cadastre{
+        position: absolute;
         font-family: 'Inter', sans-serif;
         font-style: normal;
         font-weight: 600px;
@@ -998,13 +1014,13 @@
         background-color: #415C3F;
         text-align: center;
         position: absolute;
-        left: 347px;
-        top: 1790px;
+        left: 657px;
+        top: 720px;
         cursor: pointer;
         vertical-align: middle;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
-        height: 46px;
+        height: 40px;
         width: 170px;
         line-height: 31px;
       }
